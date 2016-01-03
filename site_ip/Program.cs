@@ -12,11 +12,13 @@ namespace site_ip
     {
         static void Main(string[] args)
         {
-            IPHostEntry adresWWW = Dns.GetHostEntry("www.google.com");
+            Console.WriteLine("Witaj w programie znajdujacym adres IP podanej witryny\n");
+            Console.WriteLine("Wpisz adres strony:\n");
+            var adres = Console.ReadLine();
+            IPHostEntry adresWWW = Dns.GetHostEntry(adres);
             IPAddress adresIP = adresWWW.AddressList[0];
-
-            Console.WriteLine(adresIP.ToString());
-
+            Console.WriteLine("\n");
+            Console.WriteLine("Adres IP witryny "+adres+" to: "+adresIP.ToString());
             Console.ReadKey();
         }
     }
